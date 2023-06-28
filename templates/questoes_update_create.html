@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<ul class="page-nav">
+    <li>
+        <a class="btn btn-outline-success" href="{{ url_for('questoes_index') }}">Listar</a>
+    </li>
+</ul>
+
+{% if questoes %}
+    <h1><u>Atualizar</u> questão</h1>
+{% else %}
+    <h1>Cadastrar questão</h1>
+{% endif %}
+
+
+<form class="crud c2" action="/questoes/{{action}}{% if questoes %}/{{questoes._id}}{% endif %}" method="POST">
+
+    <input type="hidden" {% if questoes %} value={{questoes._id}} {% endif %} name="id">
+
+    <div class="form-group">
+        <label class="pt-2 pb-2">
+            <a title="editar" class="btn btn-success" onclick="adicionarTopico()">
+                <i class="bi bi-plus-circle"></i>
+            </a>
+            <span class="toggle" onclick="toggle(this, 'topicos-div')">Topicos [-]:</span>
+        </label>
+        <div id="topicos-div">
+            <div class="input-group mb-3">
+                <input {% if questoes %} value="{{questoes.topicos[0]}}" {% endif %}type="text" class="form-control" aria-label="Tópico" aria-describedby="button-addon1" name="topicos" required autocomplete="off">
+            </div>
+            {% if questoes %}
+                {% for topico in questoes.topicos %}
+                    {% if not loop.first %}
+                        <div class="input-group mb-3">
+                            <input value="{{topico}}"type="text" class="form-control" aria-label="Tópico" aria-describedby="button-addon1" name="topicos" required autocomplete="off">
+                            <a title="editar" class="btn btn-danger" type="button" onclick="removerCampo(this)">
+                                <i class="bi bi-x-circle"></i>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        
+        <div>
+            <label for="enunciado">Enunciado</label>
+            <textarea type="text" class="form-control" name="enunciado" required autocomplete="off">{% if questoes %}{{questoes.enunciado}}{% endif %}</textarea>
+        </div>
+        
+        
+        <div>
+            <label class="pt-2 pb-2">
+                <a title="editar" class="btn btn-success" onclick="adicionarAlternativa()">
+                    <i class="bi bi-plus-circle"></i>
+                </a>
+                <span class="toggle" onclick="toggle(this, 'alternativas-div')">Alternativas [-]:</span>
+            </label>
+            <div id="alternativas-div">
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                        <input {% if questoes %} {% if questoes.alternativas[0].correta %} checked {% endif %} {% endif %}class="form-check-input mt-0" type="radio" aria-label="Correta" name="correta" value=0 required>
+                    </div>
+                    <input {% if questoes %} value="{{questoes.alternativas[0].enunciado}}" {% endif %}type="text" class="form-control" aria-label="Alternativa" name="alternativas" required autocomplete="off">
+                </div>
+                {% if questoes %}
+                {% for alternativa in questoes.alternativas %}
+                    {% if not loop.first %}
+                        <div class="input-group mb-3">
+                            <div class="input-group-text">
+                                <input {% if alternativa.correta %} checked {% endif %} class="form-check-input mt-0" type="radio" aria-label="Correta" name="correta" value=0 required>
+                            </div>
+                            <input value="{{alternativa.enunciado}}" type="text" class="form-control" aria-label="Alternativa" name="alternativas" required autocomplete="off">
+                            <a title="editar" class="btn btn-danger" type="button" onclick="removerCampo(this)">
+                                <i class="bi bi-x-circle"></i>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+
+        <div>
+            <label class="pt-2 pb-2">
+                <a title="editar" class="btn btn-success" onclick="adicionarTexto()">
+                    <i class="bi bi-plus-circle"></i>
+                </a>
+                <span class="toggle" onclick="toggle(this, 'textos-div')">Textos [+]:</span>
+            </label>
+            <div id="textos-div" style="display: none;">
+                {% if questoes %}
+                    {% for texto in questoes.textos %}
+                        <div class="info-group mb-3">
+                            <input value="{{texto.link}}" type="text" class="form-control" aria-label="Texto" name="linkTexto" placeholder="Link do Texto" required>
+                            <input value="{{texto.descricao}}" type="text" class="form-control" aria-label="Link" name="descricaoTexto" placeholder="Descrição do Texto" required>
+                            <a title="editar" class="btn btn-danger" type="button" onclick="removerCampo(this)">
+                                <i class="bi bi-x-circle"></i>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div>
+            <label class="pt-2 pb-2">
+                <a title="editar" class="btn btn-success" onclick="adicionarImagem()">
+                    <i class="bi bi-plus-circle"></i>
+                </a>
+                <span class="toggle" onclick="toggle(this, 'imagens-div')">Imagens [+]:</span>
+            </label>
+            <div id="imagens-div" style="display: none;">
+                {% if questoes %}
+                    {% for imagem in questoes.imagens %}
+                    <div class="info-group mb-3">
+                        <input value="{{imagem.link}}" type="text" class="form-control" aria-label="Descricao" name="linkImagem" placeholder="Link da Imagem" required>
+                        <input value="{{imagem.descricao}} "type="text" class="form-control" aria-label="Link" name="descricaoImagem" placeholder="Descrição da Imagem" required>
+                        <a title="editar" class="btn btn-danger" type="button" onclick="removerCampo(this)">
+                            <i class="bi bi-x-circle"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        
+        <div style="padding: 15px 0px">
+            {% if provas %}
+            <button type="submit" class="btn btn-danger">Atualizar</button>
+            {% else %}
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            {% endif %}
+        </div>
+    </div>
+
+    
+    
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,401 @@
+[
+{
+    "id": 0,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "O pronome demonstrativo da linha 5 tem a função de: ",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Introduzir o termo “computador” ",
+            "correta": false
+        },
+        {
+            "enunciado":"Retomar o termo “teoria” ",
+            "correta": false
+        },
+        {
+            "enunciado":"Introduzir o termo “inteligência artificial”",
+            "correta": true
+        },
+        {
+            "enunciado":"Retomar o termo “computadores quânticos” ",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"",
+            "link":""
+        }
+    ]
+},
+
+{
+    "id": 1,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "- No trecho “Os computadores quânticos não se baseiam nos fundamentos da física clássica, mas sim nos da física quântica...” (l. 8 - 9), o conector mas denota:",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Síntese",
+            "correta": false
+        },
+        {
+            "enunciado":"Oposição",
+            "correta": false
+        },
+        {
+            "enunciado":"Confirmação",
+            "correta": true
+        },
+        {
+            "enunciado":"Opinião",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 2,
+    "topicos":["Computadores Quânticos"],
+    "enunciado": "De acordo com o texto, os computadores quânticos:",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":" São capazes de processar uma maior quantidade de dados e resolver problemas complexos com mais rapidez podendo der usados até mesmo para localizar planetas fora do Sistema Solar. ",
+            "correta": false
+        },
+        {
+            "enunciado":"Possuem uma tecnologia avançada e em breve poderão ser acessados pela população americana.",
+            "correta": true
+        },
+        {
+            "enunciado":"O computador comprado pela NASA e pelo Google será usado para resolver problemas que os atuais computadores não conseguem processar e faz parte da primeira geração desse tipo de computadores. ",
+            "correta": false
+        },
+        {
+            "enunciado":"O fato de usarem mais bits faz com que os computadores quânticos tenham uma maior capacidade de processamento.",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 3,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "No trecho “Enquanto na mecânica clássica uma partícula só pode assumir um estado de cada vez, na quântica ela pode assumir dois ao mesmo tempo...” (l. 9 - 11) o conector enquanto denota: ",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Hipótese",
+            "correta": false
+        },
+        {
+            "enunciado":"Causa",
+            "correta": false
+        },
+        {
+            "enunciado":"Sequência temporal ",
+            "correta": false
+        },
+        {
+            "enunciado":"Consequência ",
+            "correta": true
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 4,
+    "topicos":["Interpretação de texto"],
+    "enunciado": " O conector “além disso” (l. 22) tem a função de adicionar informações às funcionalidades dos computadores quânticos. Assinale a alternativa que evidencia o que a expressão retoma e adiciona, respectivamente:",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Retoma a busca de outros planetas fora do Sistema Solar e o agendamento de atividades e adiciona a possibilidade de aprendizado de máquinas. ",
+            "correta": false
+        },
+        {
+            "enunciado":" Retoma os sistemas baseados em física clássica e adiciona a possibilidade de aprendizado de máquinas. ",
+            "correta": false
+        },
+        {
+            "enunciado":"Retoma o aprendizado das máquinas e adiciona o fato de possibilidade de ampliação da capacidade de processamento. ",
+            "correta": false
+        },
+        {
+            "enunciado":"Retoma o aprendizado das máquinas e adiciona o fato de possibilidade de busca de outros planetas fora do Sistema Solar e agendamento de atividades.",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 5,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "Este texto tem como finalidade:",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Divulgar as descobertas da ciência sobre o funcionamento dos novos computadores.",
+            "correta": true
+        },
+        {
+            "enunciado":"Explicar o funcionamento dos computadores quânticos.",
+            "correta": false
+        },
+        {
+            "enunciado":"Explicar as diferenças entre bits e qubits",
+            "correta": false
+        },
+        {
+            "enunciado":"Divulgar a aquisição do Google e da Nasa e as aplicações dos computadores quânticos para melhorias no processamento. ",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 6,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "O pronome pessoal reto da linha 10 substitui o substantivo:.",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Quântica",
+            "correta": false
+        },
+        {
+            "enunciado":"Estado",
+            "correta": true
+        },
+        {
+            "enunciado":"Partícula",
+            "correta": false
+        },
+        {
+            "enunciado":"Física",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto sobre a nasa e computadores quânticos.",
+            "link":"http://veja.abril.com.br/noticia/ciencia/google-e-nasa-compram-computador-quantico"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 7,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "Este texto é uma crônica. Diante de tal informação, pode-se afirmar que há a intenção de:",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Noticiar um fato importante para a humanidade",
+            "correta": false
+        },
+        {
+            "enunciado":"Criticar de forma bem-humorada o comportamento humano. ",
+            "correta": false
+        },
+        {
+            "enunciado":"Narrar uma história. ",
+            "correta": true
+        },
+        {
+            "enunciado":"Explicar o funcionamento dos computadores. ",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto em formato de uma história, falando sobre a internet como o futuro dos computadores.",
+            "link":"http://cavernadodragaoinfo.blogspot.com.br/2012/02/teste-post.html"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 8,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "Sobre a palavra terminais que foi empregada em: “Todos os lares do mundo terão terminais do Último Computador”(l. 5), podemos dizer que ela foi utilizada: ",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"No sentido de telas.",
+            "correta": true
+        },
+        {
+            "enunciado":"Para indicar a cidade onde eles viviam. ",
+            "correta": false
+        },
+        {
+            "enunciado":" Para substituir a palavra computador. ",
+            "correta": false
+        },
+        {
+            "enunciado":"No sentido de ramais. ",
+            "correta": false
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto em formato de uma história, falando sobre a internet como o futuro dos computadores.",
+            "link":"http://cavernadodragaoinfo.blogspot.com.br/2012/02/teste-post.html"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+},
+
+{
+    "id": 9,
+    "topicos":["Interpretação de texto"],
+    "enunciado": "Na frase “Não pergunte a mim, pergunte a Ele” (l.9), o pronome pessoal do caso reto refere-se:",
+    "alternativas": 
+    [ 
+        {
+            "enunciado":"Ao avô.",
+            "correta": false
+        },
+        {
+            "enunciado":"Ao pai. ",
+            "correta": false
+        },
+        {
+            "enunciado":"Ao autor. ",
+            "correta": false
+        },
+        {
+            "enunciado":"Ao Último Computador",
+            "correta": true
+        }
+            
+    ],
+    "textos": 
+    [
+        {
+            "descricao":"Um texto em formato de uma história, falando sobre a internet como o futuro dos computadores.",
+            "link":"http://cavernadodragaoinfo.blogspot.com.br/2012/02/teste-post.html"
+        }
+    ],
+    "imagens": 
+    [
+        {
+            "descricao":"descrição...",
+            "link":"http..."
+        }
+    ]
+}
+]

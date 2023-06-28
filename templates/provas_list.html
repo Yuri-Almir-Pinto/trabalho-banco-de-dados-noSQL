@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+
+    <ul class="page-nav">
+    </ul>
+
+    <h2>Lista de provas</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cargo</th>
+                <th>Ano</th>
+                <th>Orgão</th>
+                <th>Instituição</th>
+                <th>Nível</th>
+                <th class="actions" style="padding: 0px 50px 10px">⌘</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prova in provas %}
+            <tr>
+                <td>{{prova._id}}</td>
+                <td>{{prova.cargo}}</td>
+                <td>{{prova.ano}}</td>
+                <td>{{prova.orgao}}</td>
+                <td>{{prova.instituicao}}</td>
+                <td>{{prova.nivel}}</td>
+                <td>
+                    <a title="deletar" class="btn btn-danger" href="{{ url_for ('provas_delete', id=prova._id) }}">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                    <a title="editar" class="btn btn-warning" href="{{ url_for ('provas_update', id=prova._id) }}">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+{% endblock %}

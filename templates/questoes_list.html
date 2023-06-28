@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+
+    <ul class="page-nav">
+    </ul>
+
+    <h2>Lista de questões</h2>
+
+    <form action="/questoes/index" method="POST">
+
+        {% for questao in questoes %}
+
+        <div class="card" style="margin: 0 0 5px 0">
+            
+            <div class="card-body">
+                <h5 class="card-title">
+                    {% for topico in questao.topicos %}
+                        {% if not loop.last %}
+                            {{topico}},
+                        {% else %}
+                            {{topico}}
+                        {% endif %}
+                    {% endfor %}
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{questao._id}}</h6>
+                <pre class="card-text mb-1 fw-normal fs-6">{{questao.enunciado}}</pre>
+                <h6 class="{{questao._id}} questoes-toggle" onclick="toggle(this, '{{questao._id}} alt')">Alternativas [+]:</h6>
+                    <ul class="list-group" id="{{questao._id}} alt" style="display: none;">
+                        {% for alternativa in questao.alternativas %}
+                        <li class="{% if alternativa.correta %} active {% endif %}questoes-alternativas list-group-item"> {{alternativa.enunciado}}</li>
+                        {% endfor %}
+                    </ul>
+                <h6 class="{{questao._id}} questoes-toggle" onclick="toggle(this, '{{questao._id}} txt')">Textos [+]:</h6>
+                <ul class="list-group" id="{{questao._id}} txt" style="display: none;">
+                    {% for texto in questao.textos %}
+                    <li class="questoes-alternativas list-group-item"><b>Descrição:</b> {{texto.descricao}}</li>
+                    <li class="questoes-alternativas list-group-item"><b>Link:</b> {{texto.link}}</li>
+                    {% endfor %}
+                </ul>
+                <h6 class="{{questao._id}} questoes-toggle" onclick="toggle(this, '{{questao._id}} img')">Imagens [+]:</h6>
+                <ul class="list-group" id="{{questao._id}} img" style="display: none;">
+                    {% for imagem in questao.imagens %}
+                    <li class="questoes-alternativas list-group-item"><b>Descrição:</b> {{imagem.descricao}}</li>
+                    <li class="questoes-alternativas list-group-item"><b>Link:</b> {{imagem.link}}</li>
+                    {% endfor %}
+                </ul>
+                <div style="padding: 10px 0;">
+                    {% if not prova %}
+                    <a title="deletar" class="btn btn-danger" href="{{ url_for ('questoes_delete', id=questao._id) }}" >
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                    <a title="editar" class="btn btn-warning" href="{{ url_for ('questoes_update', id=questao._id) }}">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                    {% else %}
+                    <a title="teste" class="btn btn-danger" href="{{ url_for ('provas_redirect', idProva=prova._id, action='remover', idQuestao=questao._id) }}" >
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                    <a title="editar" class="btn btn-warning" href="{{ url_for ('questoes_update', id=questao._id) }}">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </form>
+
+    
+    
+</main>  
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<ul class="page-nav">
+    <li>
+        <a class="btn btn-outline-success" href="{{ url_for('provas_index') }}">Listar</a>
+    </li>
+</ul>
+
+{% if prova %}
+    <h1><u>Atualizar</u> prova</h1>
+{% else %}
+    <h1>Cadastrar prova</h1>
+{% endif %}
+
+
+<form class="crud c2" action="/provas/{{action}}{% if prova %}/{{prova._id}}{% endif %}" method="POST">
+
+    <input type="hidden" {% if prova %} value={{prova._id}} {% endif %} name="id">
+
+    <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <input {% if prova %} value="{{prova.cargo}}" {% endif %} type="text" class="form-control" name="cargo" required autocomplete="off">
+        <label for="ano">Ano</label>
+        <input {% if prova %}value="{{prova.ano}}" {% endif %} type="text" class="form-control" name="ano" required autocomplete="off">
+        <label for="orgao">Orgão</label>
+        <input {% if prova %}value="{{prova.orgao}}" {% endif %} type="text" class="form-control" name="orgao"required autocomplete="off">
+        <label for="instituicao">Instituição</label>
+        <input {% if prova %}value="{{prova.instituicao}}" {% endif %} type="text" class="form-control" name="instituicao" required autocomplete="off">
+        <label for="nivel">Nível</label>
+        <input {% if prova %}value="{{prova.nivel}}" {% endif %} type="text" class="form-control" name="nivel" required autocomplete="off">
+        <label>Questões</label>
+        <a title="editar" class="btn btn-warning" style="width: 100%;" href="{{ url_for ('provas_redirect', idProva=prova._id, action='edit') }}">
+            <i class="bi bi-pencil-square"></i>
+        </a>
+        <div style="padding: 15px 0px">
+            {% if prova %}
+            <button type="submit" class="btn btn-danger">Atualizar</button>
+            {% else %}
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            {% endif %}
+        </div>
+    </div>
+
+    
+    
+
+</form>
+
+{% endblock %}
