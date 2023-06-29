@@ -88,10 +88,17 @@ def provas_index():
     provas = DaoProvas.readAll()
     return render_template("provas_list.html", provas=provas)
 
-@app.route("/questoes/index", methods=["GET"])
+@app.route("/questoes/index", methods=["GET", "POST"])
 def questoes_index():
-    questoes = DaoQuestoes.readAll()
-    return render_template("questoes_list.html", questoes=questoes)
+    if request.method == "GET":
+        questoes = DaoQuestoes.readAll()
+        return render_template("questoes_list.html", questoes=questoes)
+    
+    selecionado = request.form.get('filtro')
+    texto = request.form.get('filtroTexto')
+    questoes = DaoQuestoes.filtrarEnunciadoTags(selecionado, texto)
+    
+    return render_template("questoes_list.html", questoes = questoes)
 
 @app.route("/provas/create", methods=["GET", "POST"])
 def provas_create():
@@ -183,7 +190,6 @@ def questoes_delete(id):
     else:
         flash(f"Erro ao tentar deletar questão.", "warning")
     return redirect(url_for('questoes_index'))
-
 
 if __name__ == "__main__":
     app.run(debug=True)

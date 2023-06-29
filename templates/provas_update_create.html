@@ -30,7 +30,7 @@
         <label for="nivel">Nível</label>
         <input {% if prova %}value="{{prova.nivel}}" {% endif %} type="text" class="form-control" name="nivel" required autocomplete="off">
         <label>Questões</label>
-        <a title="editar" class="btn btn-warning" style="width: 100%;" href="{{ url_for ('provas_redirect', idProva=prova._id, action='edit') }}">
+        <a title="editar" class="btn btn-warning" style="width: 100%;" {% if prova %}href="{{ url_for ('provas_redirect', idProva=prova._id, action='edit') }}" {% endif %}>
             <i class="bi bi-pencil-square"></i>
         </a>
         <div style="padding: 15px 0px">

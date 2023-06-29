@@ -94,12 +94,20 @@ def readAll ():
     return list(result)
 
 def getAllQuestoes (ids):
-    questoes = []
-    for id in ids:
-        questoes.append(ObjectId(id))
+    questoes = [ObjectId(id) for id in ids]
     
     collection = getCollection()
     result = collection.find({"_id": {
         "$in": questoes
     }})
+    return list(result)
+
+def filtrarEnunciadoTags (selecionado, texto):
+    collection = getCollection()
+    if selecionado == "enunciado":
+        result = collection.find({"enunciado": {"$regex": texto, "$options": "i"}})
+    if selecionado == "topico":
+        topicos = texto.split(",")
+        result = collection.find({"topicos": {"$all": topicos}})
+
     return list(result)
