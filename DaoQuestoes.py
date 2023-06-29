@@ -14,7 +14,7 @@ def getCollection():
 
 def getQuestaoJson(questao):
     questaoJson = {
-        "topico": [],
+        "topicos": [],
         "enunciado": questao.enunciado,
         "alternativas": [],
         "textos": [],
@@ -22,7 +22,7 @@ def getQuestaoJson(questao):
     }
 
     for topico in questao.topicos:
-        questaoJson["topico"].append(topico)
+        questaoJson["topicos"].append(topico)
 
     for alternativa in questao.alternativas:
         alternativaJson = {
@@ -47,8 +47,6 @@ def getQuestaoJson(questao):
         }
 
         questaoJson["imagens"].append(imagensJson)
-
-    questaoJsonStr = json.dumps(questaoJson, indent=4)
 
     return questaoJson
 
